@@ -12,7 +12,7 @@ echo -e "\e[0;35m#      updating repo database      # \e[0m"
 echo -e "\e[0;35m#################################### \e[0m"
 
 # old files to be removed! #
-declare -a OLD_DATABASE=(exodia-repo.db exodia-repo.db.tar.gz exodia-repo.db.tar.gz.old exodia-repo.files exodia-repo.files.tar.gz exodia-repo.files.tar.gz.old)
+declare -a OLD_DATABASE=(exodia-repo.db exodia-repo.db.tar.gz exodia-repo.db.tar.gz.old exodia-repo.files exodia-repo.files.tar.gz exodia-repo.files.tar.gz.old )
 
 # remove old files #
 for i in ${OLD_DATABASE[@]}; do
@@ -33,6 +33,7 @@ echo -e "\e[0;35m#  create database for pacman  # \e[0m"
 echo -e "\e[0;35m################################ \e[0m"
 
 repo-add exodia-repo.db.tar.gz *.pkg.tar.zst
+repo-add exodia-repo.db.tar.gz *.pkg.tar.xz
 
 # remove syslink to avoid any issues #
 echo ""
